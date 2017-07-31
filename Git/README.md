@@ -14,8 +14,10 @@ While downloading the software keep all the defaults and pay attention to the de
 2. Configure the line ending conversions select -> Checkout Windows -style, commit Unix -style line endings
 
 And run the Git Bash and to help us test the working  
-Open the Git Bash and run command  
-`git --version`  
+Open the Git Bash and run command
+
+`git --version`
+
 If it gives the version number then its up and running or else there is a problem and we will have to configure it again
 
 ---------------------------------------------------------------------------------------------
