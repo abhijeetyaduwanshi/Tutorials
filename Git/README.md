@@ -112,3 +112,43 @@ Once we reach to the folder we want Git to manage our project we will have to sp
 This will initialize the Git management and convert folder to a Git project
 
 ---------------------------------------------------------------------------------------------
+
+4.First commit
+---
+
+In order to do the first commit we first have to make sure that we are in the Git project, if not navigate to the Git project folder
+
+Make sure that we are in our project folder which is a Git project, to do that list all the files and folders in the Git project using `ls` but if we use `-la`, meaning all with `ls`, then this will show all the hidden files and folders as well. These hidden files and folders are mostly the system or admin files
+
+`ls -la`
+
+We will notice that there is a .git hidden folder, this is the one that helps the Git to manage the project and the changes that we make
+
+**Now lets start**
+
+Before starting anything we have to first make files and filder maybe code files or some graphic designs. So as we will have something to add our repository
+
+Now we want Git to keep track of the changes. We have to add these new files to Git
+
+`git add .`
+
+This means that Git please add all the changes to our project, the dot in the end is the project reference
+
+This will tell Git that we have made some changes and Git now knows this  
+In order for GIT to keep track of all the changes we have to go ahead and commit these changes
+
+**Commit is a two step process**
+
+Whenever we make a commit to Git, what we are telling Git is save the changes in THIS POINT OF TIME
+
+Meaning that Git save a image of everything what is there in project at this point of time  
+And anytime later you mess up we can come back to this point of time and redoing things
+
+Also give a message along with saving an image of the current situation of the project and the changes that we did
+
+`git commit -m "message here"`
+
+Git save the image with "-m" a message and the message is in the quotes  
+Message is there for the work that we have finished so that if we have to go back in time we can look for message and pull that image of the project
+
+---------------------------------------------------------------------------------------------
