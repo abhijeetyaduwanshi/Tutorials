@@ -4,8 +4,7 @@ Git tutorial
 1.Git Intro, How to download and install
 ---
 
-Git is a software that is used for maintaining the copies of the code, documents, text etc
-
+Git is a software that is used for maintaining the copies of the code, documents, text etc  
 It is simple and helps mostly for version control of the source code
 
 **Download and install Git from internet**
