@@ -7,9 +7,9 @@ Git tutorial
 Git is a software that is used for maintaining the copies of the code, documents, text etc  
 It is simple and helps mostly for version control of the source code
 
-###Download and install Git from internet
+**Download and install Git from internet**
 
-While downloading the software keep all the defaults and pay attention to the details (Or at least thats what I did)
+While downloading the software keep all the defaults and pay attention to the details (at least this is what I did)
 1. For the path environment select -> Use Git from Git Bash only
 2. Configure the line ending conversions select -> Checkout Windows -style, commit Unix -style line endings
 
