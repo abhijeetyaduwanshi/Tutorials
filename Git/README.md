@@ -26,11 +26,11 @@ If it gives the version number then its up and running or else there is a proble
 2.Having an account, configure our username and email
 ---
 
-Before starting with anything in Git we have to have an account with Git and put up a Username and Email
+Before starting with anything in Git we have to have an account with Git and put up a username and email
 
 Whenever we are working on a Git project with a group of people making changes to the same source code, this is a way to sort things out of who did what, thats why everyone need their own account
 
-**First we will set up our name**
+**First we will set up our username**
 
 `git config --global user.name "Abhijeet Yaduwanshi"`
 
@@ -44,13 +44,15 @@ Global is used at the computer system level that we are working on, all the comm
 
 This has the same meaning as that of the name peoperty
 
-Now to check if the settings are saved and we are good to go we will have to check the config settings and to do so
+**Checking the changes that we made in the configuration**
+
+Now to check if the settings are saved and we are good to go we will have to check the config settings
 
 `git config --list`
 
 This will give us list of all the config settings, we have to go and check for the user.name and user.email
 
-If we want to check for a particular setting for say user.name do this
+If we want to check for a particular setting for say user.name
 
 `git config user.name`
 
@@ -62,7 +64,7 @@ If in the way we face some problem and have to get some help, just ask Git
 
 `git help`
 
-This will give us a list of resources that can really help us big time
+This will give us a list of resources that can really help us big time  
 And if we want to learn more about a resource from the list in the help section then take help with the resource name for example we have a resource in the list named "commit" and we want to learn more about this commit resource
 
 `git help commit`
