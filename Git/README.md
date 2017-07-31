@@ -72,3 +72,43 @@ And if we want to learn more about a resource from the list in the help section 
 This will probably open the HTML in the default browser explaining in deep about commit
 
 ---------------------------------------------------------------------------------------------
+
+3.Creating our very first repository
+---
+
+To make a new Git project, create a new folder on our local machine say "FirstLove" and in this folder we will have all of our files for the project
+
+Now we want Git to manage the project and the changes that we make  
+But how the hell is Git going to know what is the folder to our project and what files we want Git to manage?
+
+To do that we want to point Git to the "FirstLove" Folder with GitBash
+
+But first we have to make sure where is Git currently pointing at
+
+`pwd`
+
+This will show us the directory that Git is looking
+
+`cd ~`
+
+This will take us and point to the home directory
+
+`cd ..`
+
+This will take us a and point to folder up (back)
+
+`ls`
+
+This will show us the list of all the files and folders in the directory we are currently pointing at
+
+`cd <folder name>`
+
+Selecting the folder's name from the list and using `cd` will take us and point in the folder
+
+Once we reach to the folder we want Git to manage our project we will have to specifically tell Git that this is the folder where we want you to manage project or repository (repository is a technical term for project), now start your business
+
+`git init`
+
+This will initialize the Git management and convert folder to a Git project
+
+---------------------------------------------------------------------------------------------
