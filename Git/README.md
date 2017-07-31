@@ -15,7 +15,9 @@ While downloading the software keep all the defaults and pay attention to the de
 
 And run the Git Bash and to help us test the working  
 Open the Git Bash and run command  
-`git --version`  
+`sh
+git --version
+`  
 If it gives the version number then its up and running or else there is a problem and we will have to configure it again
 
 ---------------------------------------------------------------------------------------------
