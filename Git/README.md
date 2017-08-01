@@ -192,8 +192,7 @@ Now if we have made any changes in the local directory and checked the status th
 working directory > staging area > repository
 
 When we work with any files in our project its on our local machine called the working directory  
-When we "add" the files that goes to the staging area  
-	added files are the only files that can be commited  
+When we "add" the files that goes to the staging area *added files are the only files that can be commited*  
 When we "commit" with a given message that goes to the repository which is our end goal
 
 Again, to add the files to the staging area we have to add them
