@@ -179,3 +179,39 @@ If we are working in a team and we want to view commits from a particular author
 This is cool because we dont have to write author's full name, their firstName or lastName can do the work
 
 ---------------------------------------------------------------------------------------------
+
+6.Adding files to repository
+---
+
+Now if we have made any changes in the local directory and checked the status then we can see the untracked files in red color
+
+`git status`
+
+**Now at this stage we will have to push these files to the GIT repository, which is a three step process**
+
+working directory > staging area > repository
+
+When we work with any files in our project its on our local machine called the working directory  
+When we "add" the files that goes to the staging area  
+	added files are the only files that can be commited  
+When we "commit" with a given message that goes to the repository which is our end goal
+
+Again, to add the files to the staging area we have to add them
+
+`git add .`
+
+This will add all the untracked files to the staging area and now all the added files are ready to be commited
+
+Again, if we have to add a single file to the staging area, we have to add the file with its name with its extension
+
+`git add second.txt`
+
+Now this second.txt is in the staging area and now only this file is ready to be commited
+
+Adding the files will reach to the staging area, now if we check the status then the files name will be in green color that means that the files are in the staging area. If we still see the files in red color then that means that the files are not processed to the staging area
+
+Now the files which are in the staging area **even if there are multiple files, a single commit can push them all to the repository.** But the files which are in the staging area only those files will make it to the repo with a single commit
+
+`git commit -m "message here"`
+
+---------------------------------------------------------------------------------------------
