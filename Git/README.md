@@ -128,7 +128,15 @@ We will notice that there is a .git hidden folder, this is the one that helps th
 
 Before starting anything we have to first make files and filder maybe code files or some graphic designs. So as we will have something to add our repository
 
-Now we want Git to keep track of the changes. We have to add these new files to Git
+Now we know that Git is keeping track of all the changes in our local directory  
+We can always keep a track of the current condition of our projct
+
+`git status`
+
+This will give us the current condition of our project, basically this compares the local directory to the repository in Git and show if there are any changes  
+If we make any changes and check the status then all the untracked files will be shown in red color
+
+Now we have to add these new files to Git
 
 `git add .`
 
@@ -150,5 +158,24 @@ Also give a message along with saving an image of the current situation of the p
 
 Git save the image with "-m" a message and the message is in the quotes  
 Message is there for the work that we have finished so that if we have to go back in time we can look for message and pull that image of the project
+
+---------------------------------------------------------------------------------------------
+
+5.View all previous commits
+---
+
+How to view all our previous commits?  
+To do this first make sure that we are in our Git project folder  
+And we have to check the commits log
+
+`git log`
+
+This will give us the list of all the previous commits from the past along with the dates and the author
+
+If we are working in a team and we want to view commits from a particular author then
+
+`git log --author="name"`
+
+This is cool because we dont have to write author's full name, their firstName or lastName can do the work
 
 ---------------------------------------------------------------------------------------------
