@@ -40,7 +40,7 @@ Global is used at the computer system level that we are working on, all the comm
 
 **Next is setting up our email**
 
-`git config --global user.email "abhijeetyaduwanshi@gmail.com"`
+`git config --global user.email "abhi@gmail.com"`
 
 This has the same meaning as that of the name peoperty
 
@@ -213,5 +213,43 @@ Adding the files will reach to the staging area, now if we check the status then
 Now the files which are in the staging area **even if there are multiple files, a single commit can push them all to the repository.** But the files which are in the staging area only those files will make it to the repo with a single commit
 
 `git commit -m "message here"`
+
+---------------------------------------------------------------------------------------------
+
+7.Editing files
+---
+
+Now by this point of time we might have the files uploaded to Git and our repository is pretty stable
+
+Now if we review the files in the local directory and make a mind to change some of the files in the local directory and save them then the local directory and the repository will have same files but different contents in them
+
+To let Git know about the changes, go the project directory and check the status
+
+`git status`
+
+This is going to show the files which are modified in the local directory and are different from the repository
+
+**Editing single file**
+
+Now we will have to add the changes to the file in the repository as well, so again add the file
+
+`git add <file name with extension>`
+
+This will add the changed file to the staging area
+
+Now we have to commit the changes to the repository
+
+`git commit -m "file modified"`
+
+This will commit the changes to the repo
+
+Now if we check the status we will get the clean directory
+
+**Editing multiple files**
+
+To make changes in multiple files we do the (.) ie period to add all the files in the staging area and push them in the repo with a single commit
+
+```git add .
+git commit -m "modified multiple files"```
 
 ---------------------------------------------------------------------------------------------
