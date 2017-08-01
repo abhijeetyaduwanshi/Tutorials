@@ -249,7 +249,9 @@ Now if we check the status we will get the clean directory
 
 To make changes in multiple files we do the (.) ie period to add all the files in the staging area and push them in the repo with a single commit
 
-```git add .
-git commit -m "modified multiple files"```
+```
+git add .
+git commit -m "modified multiple files"
+```
 
 ---------------------------------------------------------------------------------------------
