@@ -254,3 +254,59 @@ git commit -m "modified multiple files"
 ```
 
 ---------------------------------------------------------------------------------------------
+
+8.How to view the differences b/t working copy and Git repository
+---
+
+How to view the differences in the working copy and the Git repository?  
+This is basically to see what changes are we making and how is it going to effect project in the repository
+
+To see the changes first go to the project and make some changes and then check the status `git status` of the project  
+That should show the modified files, that is the files that are different in the working copy and the Git repository
+
+**View differences in single file**
+
+Now to check the modifications or the difference between the file in the local copy and the Git repository we use diff command
+
+`git diff`
+
+This is going to show all the differences  
+The lines removed from the file in the local directory will be shown in red color and the line added to the file in the local directory will be shown in green color
+
+After we see the differences in the files and we are satisfied with all the changes then we can go and add the files and commit the changes with a message and finally check the status and verify the working copy clean status
+
+```
+git add <file name with extension>
+git commit -m "modified file"
+git status
+```
+
+Now after the commit if we check the differences `git diff` we will not get anything because everything is up to date
+
+**View differences in multiple files**
+
+If we made changes to multiple files and then check the status `git status` of the project  
+That should show the modified files, these are the files that are different in the working copy and the Git repository  
+Now to check the modifications or the difference between the files in the local copy and the Git repository we use diff command
+
+`git diff`
+
+This will show all files one by one with the differences in the working copy and all the corresponding file in the repository
+
+Again the differentiation in the lines changed are done in respect to the local directory  
+The lines removed from the files in the local directory will be shown in red color and the lines added to the files in the local directory will be shown in green color
+
+Now the changes that are done to the files are in ordered to the order the files are been changed  
+eg: file two is changed and then file one is changed the order of the display will be file two and then file one
+
+After we see the differences in the files and we are satisfied with all the changes then we can go and add the files and commit the changes with a message and finally check the status and verify the working copy clean status
+
+```
+git add .
+git commit -m "modified multiple files"
+git status
+```
+
+Now after the commit if we check the differences `git diff` we will not get anything because everything is up to date
+
+---------------------------------------------------------------------------------------------
