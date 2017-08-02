@@ -310,3 +310,47 @@ git status
 Now after the commit if we check the differences `git diff` we will not get anything because everything is up to date
 
 ---------------------------------------------------------------------------------------------
+
+9.How to view the differences b/t staging area and Git repository
+---
+
+A little more about diff
+
+If we make some changes in the project files and then check the status `git status` of the project  
+This shows the modified status  
+Now if we check the difference `git diff`  
+This will show us the differences between the files in the working copy and the repository
+
+Very well, add the files to the staging area
+
+`git add .`
+
+Which will push the files in the staging area
+
+Now if we check the differences 
+
+`git diff`
+
+We expect to see the differences
+
+But what the `git diff` does is it only shows the differences between our working copy and the repository and **NOT** between the staging area and the repository
+
+Since this file is in the staging area its not comparing it against the repository so thats why it look like everything is up to date even though we have the files that are different then the one in our repository
+
+Now if we want to see the differences between the files in the staging area and the repository we have to add the `--staged` ie
+
+`git diff --staged`
+
+This additional `--staged` will compare the difference in the files and show the different files in staging area and the repository
+
+So again
+
+`git diff`
+
+Working copy and the repository
+
+`git diff --staged`
+
+staging area and the repository
+
+---------------------------------------------------------------------------------------------
