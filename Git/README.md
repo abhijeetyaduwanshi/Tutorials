@@ -354,3 +354,38 @@ Working copy and the repository
 staging area and the repository
 
 ---------------------------------------------------------------------------------------------
+
+10.Deleting files in Git
+---
+
+**DO NOT FORGET TO COMMIT AFTER YOU DELETE A FILE**
+
+If we have to delete the files that we accidently added to the repository and want to simply delete the file then the most easiest way is to remove the file
+
+To remove the file we have to use the `rm` command with the file name and extension
+
+**BE VERY CAREFUL IN DELETING THE FILES**  
+Because deleting the file does not only delete the file from the repository but also from the working copy (local directory) as well
+
+`git rm <file name with ext>`  
+*eg: we have to delete home.html*
+
+```
+git rm home.html
+rm home.html
+```
+
+The second line is the confirmation as to tell the user that home.html has been removed
+
+Now if we check status `git status`
+
+This will show us  
+`deleted:	home.html`
+
+Now its time to commit
+
+`git commit -m "home page deleted"`
+
+Commit is required at this point of time because we might have accidently deleted a file, so we can come here and look the file that we deleted
+
+---------------------------------------------------------------------------------------------
