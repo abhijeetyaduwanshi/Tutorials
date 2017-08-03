@@ -17,7 +17,9 @@ And run the Git Bash and to help us test the working
 
 Open the Git Bash and run command
 
-`git --version`
+```
+git --version
+```
 
 If it gives the version number then its up and running or else there is a problem and we will have to configure it again
 
@@ -32,7 +34,9 @@ Whenever we are working on a Git project with a group of people making changes t
 
 **First we will set up our username**
 
-`git config --global user.name "Abhijeet Yaduwanshi"`
+```
+git config --global user.name "Abhijeet Yaduwanshi"
+```
 
 This just means that take the configuration file and change the name to Abhijeet Yaduwanshi
 
@@ -40,7 +44,9 @@ Global is used at the computer system level that we are working on, all the comm
 
 **Next is setting up our email**
 
-`git config --global user.email "abhi@gmail.com"`
+```
+git config --global user.email "abhi@gmail.com"
+```
 
 This has the same meaning as that of the name peoperty
 
@@ -48,13 +54,17 @@ This has the same meaning as that of the name peoperty
 
 Now to check if the settings are saved and we are good to go we will have to check the config settings
 
-`git config --list`
+```
+git config --list
+```
 
 This will give us list of all the config settings, we have to go and check for the user.name and user.email
 
 If we want to check for a particular setting for say user.name
 
-`git config user.name`
+```
+git config user.name
+```
 
 This will give us the user.name setting only
 
@@ -62,12 +72,16 @@ This will give us the user.name setting only
 
 If in the way we face some problem and have to get some help, just ask Git
 
-`git help`
+```
+git help
+```
 
 This will give us a list of resources that can really help us big time  
 And if we want to learn more about a resource from the list in the help section then take help with the resource name for example we have a resource in the list named "commit" and we want to learn more about this commit resource
 
-`git help commit`
+```
+git help commit
+```
 
 This will probably open the HTML in the default browser explaining in deep about commit
 
@@ -85,29 +99,41 @@ To do that we want to point Git to the "FirstLove" Folder with GitBash
 
 But first we have to make sure where is Git currently pointing at
 
-`pwd`
+```
+pwd
+```
 
 This will show us the directory that Git is looking
 
-`cd ~`
+```
+cd ~
+```
 
 This will take us and point to the home directory
 
-`cd ..`
+```
+cd ..
+```
 
 This will take us a and point to folder up (back)
 
-`ls`
+```
+ls
+```
 
 This will show us the list of all the files and folders in the directory we are currently pointing at
 
-`cd <folder name>`
+```
+cd <folder name>
+```
 
 Selecting the folder's name from the list and using `cd` will take us and point in the folder
 
 Once we reach to the folder we want Git to manage our project we will have to specifically tell Git that this is the folder where we want you to manage project or repository (repository is a technical term for project), now start your business
 
-`git init`
+```
+git init
+```
 
 This will initialize the Git management and convert folder to a Git project
 
@@ -120,7 +146,9 @@ In order to do the first commit we first have to make sure that we are in the Gi
 
 Make sure that we are in our project folder which is a Git project, to do that list all the files and folders in the Git project using `ls` but if we use `-la`, meaning all with `ls`, then this will show all the hidden files and folders as well. These hidden files and folders are mostly the system or admin files
 
-`ls -la`
+```
+ls -la
+```
 
 We will notice that there is a .git hidden folder, this is the one that helps the Git to manage the project and the changes that we make
 
@@ -131,14 +159,18 @@ Before starting anything we have to first make files and filder maybe code files
 Now we know that Git is keeping track of all the changes in our local directory  
 We can always keep a track of the current condition of our projct
 
-`git status`
+```
+git status
+```
 
 This will give us the current condition of our project, basically this compares the local directory to the repository in Git and show if there are any changes  
 If we make any changes and check the status then all the untracked files will be shown in red color
 
 Now we have to add these new files to Git
 
-`git add .`
+```
+git add .
+```
 
 This means that Git please add all the changes to our project, the dot in the end is the project reference
 
@@ -154,7 +186,9 @@ And anytime later you mess up we can come back to this point of time and redoing
 
 Also give a message along with saving an image of the current situation of the project and the changes that we did
 
-`git commit -m "message here"`
+```
+git commit -m "message here"
+```
 
 Git save the image with "-m" a message and the message is in the quotes  
 Message is there for the work that we have finished so that if we have to go back in time we can look for message and pull that image of the project
@@ -168,13 +202,17 @@ How to view all our previous commits?
 To do this first make sure that we are in our Git project folder  
 And we have to check the commits log
 
-`git log`
+```
+git log
+```
 
 This will give us the list of all the previous commits from the past along with the dates and the author
 
 If we are working in a team and we want to view commits from a particular author then
 
-`git log --author="name"`
+```
+git log --author="name"
+```
 
 This is cool because we dont have to write author's full name, their firstName or lastName can do the work
 
@@ -185,7 +223,9 @@ This is cool because we dont have to write author's full name, their firstName o
 
 Now if we have made any changes in the local directory and checked the status then we can see the untracked files in red color
 
-`git status`
+```
+git status
+```
 
 **Now at this stage we will have to push these files to the GIT repository, which is a three step process**
 
@@ -197,13 +237,17 @@ When we "commit" with a given message that goes to the repository which is our e
 
 Again, to add the files to the staging area we have to add them
 
-`git add .`
+```
+git add .
+```
 
 This will add all the untracked files to the staging area and now all the added files are ready to be commited
 
 Again, if we have to add a single file to the staging area, we have to add the file with its name with its extension
 
-`git add second.txt`
+```
+git add second.txt
+```
 
 Now this second.txt is in the staging area and now only this file is ready to be commited
 
@@ -211,7 +255,9 @@ Adding the files will reach to the staging area, now if we check the status then
 
 Now the files which are in the staging area **even if there are multiple files, a single commit can push them all to the repository.** But the files which are in the staging area only those files will make it to the repo with a single commit
 
-`git commit -m "message here"`
+```
+git commit -m "message here"
+```
 
 ---------------------------------------------------------------------------------------------
 
@@ -224,7 +270,9 @@ Now if we review the files in the local directory and make a mind to change some
 
 To let Git know about the changes, go the project directory and check the status
 
-`git status`
+```
+git status
+```
 
 This is going to show the files which are modified in the local directory and are different from the repository
 
@@ -232,13 +280,17 @@ This is going to show the files which are modified in the local directory and ar
 
 Now we will have to add the changes to the file in the repository as well, so again add the file
 
-`git add <file name with extension>`
+```
+git add <file name with extension>
+```
 
 This will add the changed file to the staging area
 
 Now we have to commit the changes to the repository
 
-`git commit -m "file modified"`
+```
+git commit -m "file modified"
+```
 
 This will commit the changes to the repo
 
@@ -268,7 +320,9 @@ That should show the modified files, that is the files that are different in the
 
 Now to check the modifications or the difference between the file in the local copy and the Git repository we use diff command
 
-`git diff`
+```
+git diff
+```
 
 This is going to show all the differences  
 The lines removed from the file in the local directory will be shown in red color and the line added to the file in the local directory will be shown in green color
@@ -289,7 +343,9 @@ If we made changes to multiple files and then check the status `git status` of t
 That should show the modified files, these are the files that are different in the working copy and the Git repository  
 Now to check the modifications or the difference between the files in the local copy and the Git repository we use diff command
 
-`git diff`
+```
+git diff
+```
 
 This will show all files one by one with the differences in the working copy and all the corresponding file in the repository
 
@@ -323,13 +379,17 @@ This will show us the differences between the files in the working copy and the 
 
 Very well, add the files to the staging area
 
-`git add .`
+```
+git add .
+```
 
 Which will push the files in the staging area
 
 Now if we check the differences 
 
-`git diff`
+```
+git diff
+```
 
 We expect to see the differences
 
@@ -339,17 +399,23 @@ Since this file is in the staging area its not comparing it against the reposito
 
 Now if we want to see the differences between the files in the staging area and the repository we have to add the `--staged` ie
 
-`git diff --staged`
+```
+git diff --staged
+```
 
 This additional `--staged` will compare the difference in the files and show the different files in staging area and the repository
 
 So again
 
-`git diff`
+```
+git diff
+```
 
 Working copy and the repository
 
-`git diff --staged`
+```
+git diff --staged
+```
 
 staging area and the repository
 
@@ -367,7 +433,9 @@ To remove the file we have to use the `rm` command with the file name and extens
 **BE VERY CAREFUL IN DELETING THE FILES**  
 Because deleting the file does not only delete the file from the repository but also from the working copy (local directory) as well
 
-`git rm <file name with ext>`  
+```
+git rm <file name with ext>
+```
 *eg: we have to delete home.html*
 
 ```
@@ -380,11 +448,15 @@ The second line is the confirmation as to tell the user that home.html has been 
 Now if we check status `git status`
 
 This will show us  
-`deleted:	home.html`
+```
+deleted:	home.html
+```
 
 Now its time to commit
 
-`git commit -m "home page deleted"`
+```
+git commit -m "home page deleted"
+```
 
 Commit is required at this point of time because we might have accidently deleted a file, so we can come here and look the file that we deleted
 
