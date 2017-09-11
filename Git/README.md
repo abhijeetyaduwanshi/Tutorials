@@ -1,4 +1,221 @@
-Git tutorial
+Git Cheat Sheet
+===
+
+1.CONFIGURE TOOLING
+---
+**Configure user information for all local repositories**
+
+```
+$ git config --global user.name "[name]"
+Sets the name you want to attach to your commit transections
+```
+
+```
+$ git config --global user.email "[user-email-address]"
+Sets the email you want to attach to your commit transection
+```
+
+2.CREATE REPOSITORIES
+---
+**Start a new repository or obtain one from an existing URL**
+
+```
+$ git init [project-name]
+Create a new local repository with the specified name
+```
+
+```
+$ git clone [url]
+Download the project and its entire version history
+```
+
+3.MAKE CHANGES
+---
+**Review edits and craft commit transection**
+
+```
+$ git status
+List all new or modified files to be commited
+```
+
+```
+$ git diff
+Shows all the file differences which are not yet staged
+```
+
+```
+$ git add [file]
+Snapshot the files in preparation for version control
+```
+
+```
+$ git diff --staged
+Shows all the file differences between staging and last file version
+```
+
+```
+$ git reset [file]
+Unstages the file, but preserve its contents
+```
+
+```
+$ git commit -m "[descriptive message]"
+Records file snapshots permanently in version history
+```
+
+4.GROUP CHANGES
+---
+**Names a series of commits and combined completed efforts**
+
+```
+$ git branch
+Lists all local brances in the current repository
+```
+
+```
+$ git branch [branch-name]
+Creates a new branch
+```
+
+```
+$ git checkout [branch-name]
+Switches to the specified branch and updates the working directory
+```
+
+```
+$ git merge [branch-name]
+Combines the specified branches history into the current branch
+```
+
+```
+$ git branch -d [branch-name]
+Deletes the specified branch
+```
+
+5.REFACTOR FILENAMES
+---
+**Relocate and remove versioned files**
+
+```
+$ git rm [file-name]
+Deletes the file from the working directory and stages the deletion
+```
+
+```
+$ git rm --cached [file-name]
+Removes the file from version control but preserves the file locally
+```
+
+```
+$ git mv [file-original-name] [file-new-name]
+Changes the file name and prepares it for commit
+```
+
+6.SUPPRESS TRACKING
+---
+**Exclude temporary files and paths**
+
+```
+*.log
+build/
+temp-*
+A text file named .gitignore suppresses accidental version controling of files and paths matching the specified patterns
+```
+
+```
+$ git ls-files --other --ignored --exclude-standard
+Lists all the ignored files in the project
+```
+
+7.SAVE FRAGMENTS
+---
+**Shelve and restore incomplete changes**
+
+```
+$ git stash
+Temporarily stores all modified tracked files
+```
+
+```
+$ git stash pop
+Restores the most recent stashed files
+```
+
+```
+$ git stash list
+Lists all stashed changesets
+```
+
+```
+$ git stash drop
+Discards the most recently stashed changesets
+```
+
+8.REVIEW HISTORY
+---
+**Browse and inspect the evolution of project files**
+
+```
+$ git log
+Lists version history for the current branch
+```
+
+```
+$ git log --follow [file]
+Lists version history for a file, including renames
+```
+
+```
+$ git diff [first-branch]...[second-branch]
+Shows contents difference between two branches
+```
+
+```
+$ git show [commit]
+Outputs metadata and content changes of the specified commit
+```
+
+9.REDO COMMITS
+---
+**Erase mistakes and craft replacement history**
+
+```
+$ git reset [commit]
+Undoes all commits after [commit], preserving changes locally
+```
+
+```
+$ git reset --hard [commit]
+Discards all history and changes back to the specified [commit]
+```
+
+10.SYNCHRONIZE CHANGES
+---
+**Register a repository bookmark and exchange version history**
+
+```
+$ git fetch [bookmark]
+Downloads all history from the repository bookmark
+```
+
+```
+$ git merge [bookmark]/[branch]
+Combines bookmark's branch into current local branch
+```
+
+```
+$ git push [alias] [branch]
+Uploads all local branch commits to GitHub
+```
+
+```
+$ git pull
+Downloads bookmark history and incorporates changes
+```
+
+---------------------------------------------------------------------------------------------
+
+Git Tutorial
 ===
 
 1.Git Intro, How to download and install
