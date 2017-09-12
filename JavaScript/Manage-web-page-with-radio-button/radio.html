@@ -1,0 +1,80 @@
+<!-- This program is to manage the web page based on the selection of the radio buttons -->
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title> Show/ hide/ selection of elements using radio buttons </title>
+
+	<!-- Styling for the page -->
+	<style type = "text/css">
+		.container {
+			padding: 20px;
+			display: none;
+			margin-top: 20px;
+			border: 1px solid #000;
+		}
+
+		.red { background: #ff0000; 
+			color: #ffffff;
+		}
+		
+		.green { background: #00ff00; 
+			color: #ffffff;
+		}
+
+		.blue { background: #0000ff;
+			color: #ffffff;
+		}
+	</style>
+	<!-- End of the styling for the page -->
+
+</head>
+<body>
+
+<!-- Description -->
+<p> This is a program where we have to select elements based on radio buttons. There are three radio below, when we select a particular radio only one action takes place and rest all are disabled. </p>
+<p> Further more this progam can be mixed and matched with more functionality and can enhance the performance of the web page. </p>
+<!-- End of description -->
+
+	<!-- Radio button section -->
+	<div>
+		<label><input type = "radio" name = "radio" value = "red"> red </label>
+		<label><input type = "radio" name = "radio" value = "green"> green </label>
+		<label><input type = "radio" name = "radio" value = "blue"> blue </label>
+	</div>
+	<!-- End of the radio button section -->
+
+	<!-- Containers section -->
+	<div class = "red container">You have selected red radio button</div>
+	<div class = "green container">You have selected green radio button</div>
+	<div class = "blue container">You have selected blue radio button</div>
+	<!-- End of the containers section -->
+
+	<!-- jQuery import from the CDN -->
+	<script type = "text/javascript" src = "http://code.jquery.com/jquery.min.js"></script>
+
+	<!-- In body JS -->
+	<script type = "text/javascript">
+		$( document ).ready( function () {
+			$( "input[type = 'radio']" ).click( function () {
+				if ( $( this ).attr( "value" ) == "red" ) {
+					$( ".container" ).not( ".red" ).hide();
+					$( ".red" ).show();
+				};
+
+				if ( $( this ).attr( "value" ) == "green" ) {
+					$( ".container" ).not( ".green" ).hide();
+					$( ".green" ).show();
+				};
+
+				if ( $( this ).attr( "value" ) == "blue" ) {
+					$( ".container" ).not( ".blue" ).hide();
+					$( ".blue" ).show();
+				};
+			});
+		});
+	</script>
+	<!-- End of in body JS -->
+	
+</body>
+</html>
