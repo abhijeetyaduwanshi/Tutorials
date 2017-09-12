@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Dynamically populating data in html table using external json file </title>
+</head>
+<body>
+
+	<!-- This is the div where a dynamic html table will be created and populated -->
+	<div id="List"></div>
+
+	<!-- jQuery Import -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- In body javascript/jQuery -->
+	<script type="text/javascript">
+
+		//These block of code is to target the local json file ( tableFile.json )
+		$.getJSON( "tableFile.json", function ( dataInTable ) {
+			populateTable ( dataInTable );
+		});
+
+		//These block of code is to take make a dynamic html table, take the data from the tableFile.json file and populate the list of employees in the table
+		function populateTable ( dataInTable ) {
+			var empList = dataInTable.employeesList;
+			var empData = empList.employeesData;
+			var emp_data_value;
+			var table = "<table><caption> List of employees </caption><thead><tr><td> S. No </td><td> First Name </td><td> Last Name </td><td> Age </td><td> Department </td></tr></thead>";
+
+			for ( var i = 0; i < empData.length; i++ ) {
+
+				table = table + "<tbody><tr>";
+
+				emp_data_value = empData[i].employeeSNo;
+
+				table = table + "<td>" + emp_data_value + "</td>";
+
+				emp_data_value = empData[i].employeeFirstName;
+
+				table = table + "<td>" + emp_data_value + "</td>";
+
+				emp_data_value = empData[i].employeeLastName;
+
+				table = table + "<td>" + emp_data_value + "</td>";
+
+				emp_data_value = empData[i].employeeAge;
+
+				table = table + "<td>" + emp_data_value + "</td>";
+
+				emp_data_value = empData[i].employeeDepartment;
+
+				table = table + "<td>" + emp_data_value + "</td>";
+
+				table = table + "</tr>";
+			};
+			table = table + "</tbody></table>";
+			$( "#List" ).html( table );
+		};
+	</script>
+</body>
+</html>
