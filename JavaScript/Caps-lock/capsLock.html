@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Setting the character set -->
+	<meta charset="utf-8">
+
+	<!-- Setting the title of the page -->
+	<title>Caps Lock Alert JQuery</title>
+
+	<!-- Inbody style sheet -->
+	<style type="text/css">
+		.body{
+			width: auto;
+			height: auto;
+			border-style: solid;
+			border-radius: 10px;
+			padding: 50px 0px 30px 0px;
+			margin-top: 150px;
+		}
+	</style>
+	<!-- End of inbody style sheet -->
+
+</head>
+<body>
+
+	<!-- Body div -->
+	<div class="body">
+		<center>
+			<label title="Input field">Password: </label>
+			<input id="value" type="password" title="Enter your special code" placeholder="Enter your password here" />
+			<input id="submit" type="submit" value="Submit" title="Click button to submit" />
+
+			<!-- Result div -->
+			<div id="result"></div>
+			<!-- End of result div -->
+
+		</center>
+	</div>
+	<!-- End of body div -->
+
+	<!-- jQuery import -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+	<!-- Inbody javascript -->
+	<script type="text/javascript">
+
+		// Initial functionality of the page
+		$( document ).ready( function() {
+			$( "#submit" ).click( function() {
+				var value = $( "#value" ).val();
+				$( "#result" ).html( "<br />" + "Your Password is: " + value );
+			});
+		});
+
+		// Caps lock check for password field
+		$( document ).ready( function() {
+			$( "input[ type='password' ]" ).keypress( function(e) {
+				var key_check = e.which;
+				var isUp = ( key_check >= 65 && key_check <= 90 ) ? true : false;
+				var isLow = ( key_check >= 97 && key_check <= 122 ) ? true : false;
+				var isShift = ( e.shiftKey ) ? e.shiftKey : ( ( key_check == 16 ) ? true : false );
+				if ( ( isUp && !isShift ) || ( isLow && isShift ) ) {
+					capLock();
+				};
+			});
+
+			// If caps lock is on, show an alert
+			function capLock() {
+				alert( "Capslock is ON, To use capital alphabets use shift key" );
+			};
+		});
+
+	</script>
+	<!-- End os inbody javascript -->
+
+</body>
+</html>
