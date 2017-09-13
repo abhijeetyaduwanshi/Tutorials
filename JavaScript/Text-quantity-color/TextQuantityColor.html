@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+
+	<!-- Title of the page -->
+	<title>Text quantity color</title>
+
+	<!-- Inbody style sheet -->
+	<style type="text/css">
+
+		body {
+			font-family: Helvetica, Arial, Sans-Serif;
+			padding: 20px 50px 0px 50px;
+		}
+
+		#subjectHead {
+			font-size: 35px;
+		}
+
+		#nameEmailHead, #resultHead, #outputHead {
+			font-size: 22px;
+		}
+
+		.inputFields {
+			border: 2px solid;
+		}
+
+		#dropDown {
+			border-radius: 5px;
+			width:173px;
+		}
+
+		#loadLab, #resetLab {
+			border-radius: 5px;
+			width: 100px;
+		}
+
+		#resultCointainer {
+			border-style: solid;
+			padding: 10px 10px 12px 10px;
+		}
+
+	</style>
+	<!-- End of inbody style sheet -->
+
+</head>
+<body>
+
+	<!-- Heading of the page -->
+	<div>
+		<span id="subjectHead">Text quantity color</span><br>
+		<span id="nameEmailHead">Abhijeet Yaduwanshi - ayaduwan@hawk.iit.edu</span>
+	</div>
+	<!-- End of heading of the page -->
+
+	<!-- Input fields, submit and reset button -->
+	<table>
+
+		<tr>
+			<td><label>Body Text:</label></td>
+			<td><input id="bodyText" class="inputFields" type="text"/></td>
+		</tr>
+
+		<tr>
+			<td><label>Quantity:</label></td>
+			<td><input id="quant" class="inputFields" type="text"/></td>
+		</tr>
+
+		<tr>
+			<td><label>Color:</label></td>
+			<td><select id="dropDown" class="inputFields">
+				<option value="red">Red</option>
+				<option value="green">Green</option>
+				<option value="blue">Blue</option>
+			</select></td>
+		</tr>
+
+		<tr>
+			<td><button id="loadLab" class="inputFields">Run Lab</button></td>
+			<td><button id="resetLab" class="inputFields">Reset Lab</button></td>
+		</tr>
+
+	</table>
+	<!-- End of input fields, submit and reset button -->
+
+	<!-- Result div -->
+	<div id="results"></div>
+	<!-- End of result div -->
+
+	<!-- Inbody javascript -->
+	<script type="text/javascript">
+
+	// click event handler with the addEventListener javaScript function for run-lab and reset-lab
+	document.getElementById("loadLab").addEventListener("click", runLab);
+	document.getElementById("resetLab").addEventListener("click", resetLab);
+
+		// setting reset-lab button as disabled initially
+		var resultBlock = document.getElementById("results").value;
+		if (resultBlock = " ") {
+			document.getElementById("resetLab").disabled = true;
+		};
+
+		// run-lab function
+		function runLab() {
+
+			// setting result div as empty
+			document.getElementById("results").innerHTML = "";
+
+			// declare and initialize the variables
+			var bodyText = document.getElementById("bodyText").value;
+			var quantity = document.getElementById("quant").value;
+			var num = parseInt(quantity);
+			var color = document.getElementById("dropDown").value;
+
+			// checking for empty fields and data type, else run-lab
+			if (bodyText == "" || quantity == "" || isNaN(quantity) ) {
+				alert("Enter Valid text!!");
+				return;
+			} else {
+
+			// result set
+			document.getElementById("results").innerHTML+= "<br><span id='resultHead'>Results</span>";
+			for (var i = 1; i < num + 1; i++) {
+				var head = "<div id='resultCointainer' style='border-color:" + color + ";'><span id='outputHead' style='color:" + color + ";'>" + "Output" + i + "</span><br><span>" + bodyText + "</span></div><br>";
+				document.getElementById("results").innerHTML += head;
+				document.getElementById("resetLab").disabled = false;
+			}
+		}
+	}
+
+	// rset-lab function
+	function resetLab() {
+		document.getElementById("results").innerHTML = "";
+		document.getElementById("bodyText").value = "";
+		document.getElementById("quant").value = "";
+		document.getElementById("resetLab").disabled = true;
+	}
+
+</script>
+<!-- End of inbody javascript -->
+
+</body>
+</html>
