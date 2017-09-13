@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<!-- Title of the page -->
+	<title>Canvas Drawing</title>
+
+	<!-- In body stylesheet -->
+	<style type="text/css">
+		#content-wrapper {
+			width: 600px;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		#canvasRun {
+			background-color: #c00;
+			border: 0;
+			color: #fff;
+		}
+	</style>
+	<!-- End of in body stylesheet -->
+
+</head>
+<body>
+
+	<!-- Container for canvas button and canvas -->
+	<div id="content-wrapper">
+		<button id="canvasRun" onclick="draw()">Draw Canvas</button><br><br>
+		<canvas id="myCanvas" width="600" height="450"></canvas>
+	</div>
+	<!-- End of container for canvas button and canvas -->
+
+	<!-- In body javascript -->
+	<script type="text/javascript">
+
+		function draw(){
+
+			// Setting the canvas
+			var canvas = document.getElementById('myCanvas');
+			var ctx = canvas.getContext('2d');
+
+			// Setting the canvas grid
+			var grid = ctx.createLinearGradient(0,0,0,400);
+			grid.addColorStop(0, "#FFFFFF"); // White
+			grid.addColorStop(1, "#000000"); // Black
+			ctx.fillStyle = grid;
+			ctx.fillRect(0,0,600,450);
+
+			// Header
+			ctx.font = "32px sans-serif";
+			ctx.fillStyle = "#C80000";
+			ctx.fillText("Canvas Drawing", 180, 60);
+
+			// Header Underline
+			ctx.beginPath();
+			ctx.rect(30,75,550,3);
+			ctx.fillStyle = "#C80000";
+			ctx.strokeStyle = "#C80000";
+			ctx.setLineDash([100, 0]);
+			ctx.fill();
+			ctx.stroke();
+
+			// Circle
+			ctx.beginPath();
+			ctx.arc(100,150, 50, 0, Math.PI*2,true);
+			ctx.fillStyle = '#0000C8';
+			ctx.fill();
+			ctx.lineWidth = 3;
+			ctx.strokeStyle = '#FFFFFF';
+			ctx.stroke();
+
+			// Rotate function for animation
+			function rotate(){
+
+				// Setting the canvas grid for amination figures
+				ctx.fillStyle = grid;
+				ctx.fillRect(230,80,350,150);
+
+				// Arc
+				var time = new Date();
+				ctx.beginPath();
+				ctx.save();
+				ctx.translate(290, 150);
+				ctx.rotate( ((2*Math.PI)/2)*time.getSeconds() + ((2*Math.PI)/2000)*time.getMilliseconds() );
+				ctx.translate(-290, -150);
+				ctx.arc(290,150,50,0,Math.PI*.9);
+				ctx.lineWidth = 15;
+				ctx.strokeStyle = '#FFA500';
+				ctx.setLineDash([100, 0]);
+				ctx.stroke();
+				ctx.restore();
+
+				// Square
+				ctx.save();
+				ctx.beginPath();
+				ctx.translate(490, 155);
+				ctx.rotate( ((2*Math.PI)/6)*time.getSeconds() + ((2*Math.PI)/6000)*time.getMilliseconds() );
+				ctx.translate(-490, -190);
+				ctx.rect(440,140,95,95);
+				ctx.fillStyle = '#C80000';
+				ctx.fill();
+				ctx.closePath();
+				ctx.lineWidth = 3;
+				ctx.strokeStyle = '#FFFFFF';
+				ctx.setLineDash([100, 0]);
+				ctx.stroke();
+				ctx.restore();
+			}
+			setInterval(rotate, 10);
+
+			// Triangle
+			ctx.beginPath();
+			ctx.moveTo(100,240);
+			ctx.lineTo(150,340);
+			ctx.lineTo(50,340);
+			ctx.fillStyle = '#00C800';
+			ctx.fill();
+			ctx.closePath();
+			ctx.strokeStyle = '#00C800';
+			ctx.stroke();
+
+			// Outer rectangle for curve
+			ctx.beginPath();
+			ctx.rect(220,240,330,100);
+			ctx.fillStyle = '#ffffff';
+			ctx.fill();
+			ctx.closePath();
+			ctx.strokeStyle = '#FFFFFF';
+			ctx.stroke();
+
+			// Curve
+			ctx.beginPath();
+			ctx.moveTo(240,290);
+			ctx.quadraticCurveTo(307.5,240,385,290);
+			ctx.quadraticCurveTo(457.5,340,525,290);
+			ctx.setLineDash([10, 5]);
+			ctx.strokeStyle = '#000000';
+			ctx.stroke();
+
+			// Footer
+			ctx.font = "14px sans-serif";
+			ctx.fillStyle = "#FFFFFF";
+			ctx.fillText("Abhijeet Yaduwanshi", 20, 405);
+			ctx.fillText("abhijeetyaduwanshi@gmail.com", 20, 425);
+
+			// Image
+			var img = new Image();
+			img.onload = function() {
+				ctx.drawImage(img, 332, 370, 220, 55);
+			};
+			img.src = 'iit_logo.png';
+		}
+</script>
+<!-- End of in body javascript -->
+
+</body>
+</html>
