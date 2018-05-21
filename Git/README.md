@@ -88,6 +88,14 @@ Combines the specified branches history into the current branch
 ```
 
 ```
+$ git branch -m [oldName] [newName]
+Rename the branch while pointing to any other branch
+
+$ git branch -m [newName]
+Rename the current branch
+```
+
+```
 $ git branch -d [branch-name]
 Deletes the specified branch
 ```
